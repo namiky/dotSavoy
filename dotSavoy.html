@@ -1,0 +1,755 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>dotSavoy</title>
+  <!-- CSS -->
+  <link href="dotSavoy.css" rel="stylesheet" type="text/css" />
+
+  <!-- JavaScript -->
+  <script type='text/javascript' src="js/jquery.1.7.2.min.js"></script>
+  <script type="text/javascript" src="js/jquery.scrollTo-1.4.3.1.min.js"></script>
+  <script type="text/javascript" src="js/jquery.parallax-1.1.js"></script>
+  <script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
+  <script type="text/javascript" src="js/jquery.scrollorama.js"></script>
+  <script type="text/javascript" src="js/jquery.scrolldeck.js"></script>
+  <script type="text/javascript" src="js/jquery.waypoints.min.js"></script>
+  <script type="text/javascript" src="js/jquery.introtzikas.js"></script>
+  	<script type="text/javascript" src="js/jquery.masonry.min.js"></script>
+
+
+  <!-- JPlayer -->
+  <link href="jPlayer/skin/pink.flag/jplayer.pink.flag.css" rel="stylesheet" type="text/css" />
+  <script type="text/javascript" src="jPlayer/js/jquery.jplayer.min.js"></script>
+  <script type="text/javascript" src="jPlayer/js/jplayer.playlist.min.js"></script>
+
+    
+
+
+
+  <script type="text/javascript">
+    //*******************************
+    //***     PARALLAX            
+    //***     パララックス（錯視）
+    //*******************************
+    $(document).ready(function () {
+      //$('#nav').localScroll(800);
+      RepositionNav();
+      $(window).resize(function () {
+        RepositionNav();
+      });
+      //.parallax(xPosition, adjuster, inertia, outerHeight) options:
+      //xPosition - Horizontal position of the element
+      //adjuster - y position to start from
+      //inertia - speed to move relative to vertical scroll. Example: 0.1 is one tenth the speed of scrolling, 2 is twice the speed of scrolling
+      //outerHeight (true/false) - Whether or not jQuery should use it's outerHeight option to determine when a section is in the viewport
+      $('#area1').parallax("50%", 0, 0.1, true);
+      $('#area2').parallax("50%", 1000, 0.1, true);
+      $('#area3').parallax("50%", 2000, 0.1, true);
+      $('#area4').parallax("50%", 4000, 0, true);
+      $('#area5').parallax("50%", 4000, 0.1, true);
+      $('#area6').parallax("50%", 16000, 0.1, true);
+      $('#area7').parallax("50%", 0, 0.5, true);
+      //$('#area8').parallax("50%", 00, 0.1, true);
+      var deck = new $.scrolldeck();
+    })
+
+
+    //********************************************************************
+    //***    WayPoints          
+    //***     任意のスクロール位置に来たらJqueryアニメーションを実行する。
+    //***     ※Jquery1-7-2でのみ？動作
+    //********************************************************************
+    $(function () {
+      /***** AREA1内での処理 *******/
+      $("#area1-1").waypoint(function (event, direction) {
+        if (direction === 'down') {
+        	$("#sc6").animate({ opacity: "1" }, 1000);
+        }else{
+        	 $("#sc6").animate({ opacity: "0" }, 1000);
+     	}
+      });
+      $("#area1-2").waypoint(function (event, direction) {
+        if (direction === 'down') {
+        	$("#sc1").animate({ top: "1000",opacity:"0" }, 1300);
+        	$("#sc2").animate({ top: "1000",opacity:"0" }, 1300,"easeOutCubic");
+        	$("#sc3").animate({ top: "1000",opacity:"0" }, 1300,"easeOutBounce");
+        	$("#sc4").animate({ top: "1000",opacity:"0" }, 1300,"easeOutExpo");
+        	$("#sc5").animate({ top: "1000",opacity:"0" }, 1300);
+        }else{
+     		$("#sc1").animate({ top: "0",opacity:"1" }, 1000);
+     		$("#sc2").animate({ top: "0",opacity:"1" }, 1000);
+     		$("#sc3").animate({ top: "0",opacity:"1" }, 1000);
+     		$("#sc4").animate({ top: "0",opacity:"1 "}, 1000);
+     		$("#sc5").animate({ top: "0",opacity:"1" }, 1000);
+     		}
+      });
+	  /***** AREA1内での処理 *******/
+    	
+      /***** AREA2内での処理 *******/
+     $("#area2-1").waypoint(function(event,direction){
+     	if(direction=== "down"){
+	       	 $("#sc6").animate({ opacity: "0" }, 500);
+     	}else{
+			$("#sc6").animate({ opacity: "1" }, 500);
+     	}
+     })
+      $("#area2-1").waypoint(function (event, direction) {
+        if (direction === 'down') $("#man1").animate({ bottom: "0" }, 1000);
+        else $("#man1").animate({ bottom: "-500" }, 1000);
+      });
+      $("#area2-2").waypoint(function (event, direction) {
+        if (direction === 'down') $(".coment1").animate({ opacity: "1" }, 1000);
+        else $(".coment1").animate({ opacity: "0" }, 1000);
+      });
+
+      $("#area2-3").waypoint(function (event, direction) {
+        if (direction === 'down') $(".coment2").animate({ opacity: "1" }, 1000);
+        else $(".coment2").animate({ opacity: "0" }, 1000);
+      });
+
+      $("#area2-4").waypoint(function (event, direction) {
+        if (direction === 'down') $(".coment3").animate({ opacity: "1" }, 1000);
+        else $(".coment3").animate({ opacity: "0" }, 1000);
+      });
+
+      $("#area2-5").waypoint(function (event, direction) {
+        if (direction === 'down') $(".coment4").animate({ opacity: "1" }, 1000);
+        else $(".coment4").animate({ opacity: "0" }, 1000);
+      });
+
+      $("#area2-6").waypoint(function (event, direction) {
+        if (direction === 'down') {
+          $("#man1").animate({ opacity: "0" }, 1000);
+          $("#man2").animate({ opacity: "1" , right:"50"}, 1000);
+          $(".coment1").animate({ opacity: "0" }, 1000);
+          $(".coment2").animate({ opacity: "0" }, 1000);
+          $(".coment3").animate({ opacity: "0" }, 1000);
+          $(".coment4").animate({ opacity: "0" }, 1000);
+          $(".coment5").animate({ opacity: "1" }, 1000);
+
+        } else {
+          $("#man1").animate({ opacity: "1" }, 1000);
+          $("#man2").animate({ opacity: "0" ,right:"-500"}, 1000);
+          $(".coment1").animate({ opacity: "1" }, 1000);
+          $(".coment2").animate({ opacity: "1" }, 1000);
+          $(".coment3").animate({ opacity: "1" }, 1000);
+          $(".coment4").animate({ opacity: "1" }, 1000);
+          $(".coment5").animate({ opacity: "0" }, 1000);
+
+        }
+      });
+      /***** AREA2内での処理 *******/
+
+
+      /***** AREA4内での処理 *******/
+      $("#area4").waypoint(function (event, direction) {
+        if (direction === 'down') {
+          $(".coment5").animate({ opacity: "0" }, 1000);
+          $(".coment6").animate({ opacity: "1" }, 1000);
+        } else {
+          $(".coment5").animate({ opacity: "1" }, 1000);
+          $(".coment6").animate({ opacity: "0" }, 1000);
+        }
+      });
+      /***** AREA4内での処理 *******/
+
+
+      /***** AREA5内での処理 *******/
+      $("#area5-1").waypoint(function (event, direction) {
+        if (direction === 'down') {
+          $(".coment7").animate({ opacity: "1" }, 1000);
+          $(".coment6").animate({ opacity: "0" }, 1000);
+
+        } else {
+          $(".coment7").animate({ opacity: "0" }, 1000);
+          $(".coment6").animate({ opacity: "1" }, 1000);
+
+        }
+      });
+
+      $("#area5-2").waypoint(function (event, direction) {
+        if (direction === 'down') {
+          $(".depth").animate({ height: "1000", width: "1000" }, 2000);
+          $(".item1").animate({ opacity: "1", left: "45%" }, 0);
+          $("#man2").animate({ opacity: "0", right: "-500" }, 1000);
+          $(".coment7").animate({ opacity: "0" }, 1000);
+        } else {
+          $(".depth").animate({ height: "0", width: "0" }, 100);
+          $(".item1").animate({ opacity: "0",left:"-50%" }, 0);
+          $("#man2").animate({ opacity: "1", right: "50" }, 2000);
+          $(".coment7").animate({ opacity: "1" }, 1000);
+        }
+      });
+      /***** AREA5内での処理 *******/
+
+
+      /***** AREA6内での処理 *******/
+      $("#area6-1").waypoint(function (event, direction) {
+        if (direction === 'down') {
+          $(".depth").animate({ height: "0", width: "0" }, 1000);
+          $(".item1").animate({ opacity: "0", left: "-50%" }, 0);
+        } else {
+          $(".depth").animate({ height: "1000", width: "1000" }, 1000);
+          $(".item1").animate({ opacity: "1", left: "45%" }, 0);
+        }
+      });
+
+
+      $("#area6-2").waypoint(function (event, direction) {
+        if (direction === 'down') {
+          $(".depth").animate({ height: "0", width: "0" }, 100);
+          $(".item1").animate({ opacity: "0", left: "-50%" }, 0);
+          $("#man1").animate({ opacity: "1" }, 1000);
+          $(".coment8").animate({ opacity: "1" }, 1000);
+          $("#player").animate({ top: "50" }, 1000, "easeOutBounce");
+        } else {
+          $("#man1").animate({ opacity: "0" }, 1000);
+          $(".coment8").animate({ opacity: "0" }, 1000);
+          $("#player").animate({ top: "-1000" }, 1000, "easeOutBounce");
+        }
+      });
+      $("#area6-4").waypoint(function (event, direction) {
+        if (direction === 'down') {
+          $("#inst2").animate({ top: "0" }, 1000, "easeOutBounce");
+          $("#stage1").animate({ opacity: "1" }, 1000);
+        } else {
+          $("#inst2").animate({ top: "-500" }, 1000, "easeOutBounce");
+          $("#stage1").animate({ opacity: "0" }, 1000);
+        }
+      });
+      $("#area6-5").waypoint(function (event, direction) {
+        if (direction === 'down') {
+          $("#inst1").animate({ top: "0" }, 1000, "easeOutBounce");
+        } else {
+          $("#inst1").animate({ top: "-500" }, 1000, "easeOutBounce");
+        }
+      });
+      $("#area6-6").waypoint(function (event, direction) {
+        if (direction === 'down') {
+          $("#inst3").animate({ top: "-200" }, 1000, "easeOutBounce");
+        } else {
+          $("#inst3").animate({ top: "-1000" }, 1000, "easeOutBounce");
+        }
+      });
+	  $("#area6last").waypoint(function (event, direction) {
+        if (direction === 'down') {
+          $("#man1").animate({ opacity: "0" }, 1000);
+          $("#inst1").animate({ opacity: "0" }, 1000);
+          $("#inst2").animate({ opacity: "0" }, 1000);
+          $("#inst3").animate({ opacity: "0" }, 1000);
+          $(".coment8").animate({ opacity: "0" }, 1000);
+          $("#stage1").animate({ opacity: "0" }, 1000);
+        } else {
+          $("#man1").animate({ opacity: "1" }, 1000);
+          $("#inst1").animate({ opacity: "1" }, 1000);
+          $("#inst2").animate({ opacity: "1" }, 1000);
+          $("#inst3").animate({ opacity: "1" }, 1000);
+          $(".coment8").animate({ opacity: "1" }, 1000);
+          $("#stage1").animate({ opacity: "1" }, 1000);
+        }
+      });
+      
+      
+      /***** AREA6内での処理 *******/
+     
+      /***** AREA7内での処理 *******/
+     $("#area7").waypoint(function (event, direction) {
+        if (direction === 'down') {
+          $("#player").animate({ left: "0" ,top:"0"}, 1000, "easeOutBounce");
+        }else{
+        	$("#player").animate({ left: "300",top:"50" }, 1000, "easeOutBounce");
+        }
+     });	
+	 /***** AREA7内での処理 *******/
+     
+
+
+
+      /***** area8内での処理 *******/
+      $("#area8").waypoint(function (event, direction) {
+        if (direction === 'down') {
+          $("#man1").animate({ opacity: "1" }, 1000);
+          $("#player").animate({ left: "600" }, 1000, "easeOutBounce");
+          $(".coment9").animate({ opacity: "1" }, 1000);
+          $("#link1").animate({ top: "300" }, 1000, "easeOutBounce");
+          $("#link2").animate({ top: "300" }, 2000, "easeOutBounce");
+
+        } else {
+          $("#man1").animate({ opacity: "0" }, 1000);
+          $("#player").animate({ left: "0" }, 1000, "easeOutBounce");
+          $(".coment9").animate({ opacity: "0" }, 1000);
+          $("#link1").animate({ top: "-500" }, 1000, "easeOutBounce");
+          $("#link2").animate({ top: "-500" }, 1000, "easeOutBounce");
+        }
+      });
+      /***** area8内での処理 *******/
+    })
+
+    //*****************************************************************************
+    //***    scrolldeck & scrollorama         
+    //***     文字のアニメーション
+    //***     ※slide内
+    //***         class = (animate-in   :実際に文字・画像を挿入してアニメ）
+    //***               = (animate-build:何も挿入しない。アニメーションの終わり等に
+    //***         data-animation="効果"
+    //*****************************************************************************
+    $(document).ready(function () {
+      var deck = new $.scrolldeck({
+        buttons: '.nav-button',
+        easing: 'easeInOutExpo'
+      });
+    });
+
+
+
+    //*****************************************************************************
+    //***    自作　出現APPEAR        
+    //***     画像アニメーション メニュー紹介で使用
+    //***     ※slide内
+    //***         class = (animate-in   :実際に文字・画像を挿入してアニメ）
+    //***               = (animate-build:何も挿入しない。アニメーションの終わり等に
+    //***         data-animation="効果"
+    //*****************************************************************************
+    $(function () {
+      //初期設定
+      //変数名（var等）を指定しないのでグローバル変数になる。
+      firstHeight = parseInt($('#area1').css('height'));
+      secondHeight = parseInt($('#area2').css('height'));
+      thirdHeight = parseInt($('#area3').css('height'));
+      fourthHeight = parseInt($('#area4').css('height'));
+      fifthHeight = parseInt($('#area5').css('height'));
+      sixthHeight = parseInt($('#area6').css('height'));
+      seventhHeight = parseInt($('#area7').css('height'));
+      eighthHeight = parseInt($('#area8').css('height'));
+    });
+
+    // 任意の場所までスクロールするとコンテンツを表示する
+    $(function () {
+      // スクロールすると表示するエリア
+      var openMenu = $('.openMenu');
+      var food1 = $('.food1');
+      var food2 = $('.food2');
+      var food3 = $('.food3');
+      var food4 = $('.food4');
+
+      // スクロール量の設定
+      var Position1 = (firstHeight + secondHeight + thirdHeight); // 単位：px
+      var Position2 = Position1 + 500; // 単位：px
+      var Position3 = Position2 + parseInt($('.food1').css('height')) + 500; // 単位：px
+      var Position4 = Position3 + parseInt($('.food2').css('height')) + 500; // 単位：px
+      var Position5 = Position4 + parseInt($('.food3').css('height')) + 500; // 単位：px
+      var Position6 = Position5 + parseInt($('.food4').css('height')) + 500; // 単位：px
+      var PositionX = (Position1 + fourthHeight) - 500; // 単位：px 最後のposition
+      // スクロールすると表示するエリアを非表示
+      openMenu.hide();
+      food1.hide();
+      food2.hide();
+      food3.hide();
+      food4.hide();
+      $(window).scroll(function () {
+        // メニューの表示
+        if (($(this).scrollTop() > Position1) && ($(this).scrollTop() < PositionX)) openMenu.fadeIn();
+        else openMenu.fadeOut();
+        // food1の表示
+        if (($(this).scrollTop() > Position2) && ($(this).scrollTop() < Position3)) food1.fadeIn();
+        else food1.fadeOut();
+        // food2の表示
+        if (($(this).scrollTop() > Position3) && ($(this).scrollTop() < Position4)) food2.fadeIn();
+        else food2.fadeOut();
+        // food3の表示
+        if (($(this).scrollTop() > Position4) && ($(this).scrollTop() < Position5)) food3.fadeIn();
+        else food3.fadeOut();
+        // food4の表示
+        if (($(this).scrollTop() > Position5) && ($(this).scrollTop() < Position6)) food4.fadeIn();
+        else food4.fadeOut();
+      });
+    });
+
+
+
+    //*****************************************************************************
+    //***    JPLAYER       
+    //***     音楽の再生
+    //*****************************************************************************
+    //<![CDATA[
+    $(document).ready(function () {
+      new jPlayerPlaylist({
+        jPlayer: "#jquery_jplayer_2",
+        cssSelectorAncestor: "#jp_container_2"
+      }, [
+          {
+            title: "Seresta",
+            artist:"pf.Kurita , sax.takano ",
+            mp3: "jPlayer/music/Seresta.mp3"
+          },
+          {
+            title: "Swing Shiift",
+            artist: "YamanoBigriBand",
+            mp3: "jPlayer/music/SwingShift.mp3"
+          },
+          {
+            title: "You are Not the Kind",
+            artist: "YamanoBigriBand",
+            mp3: "jPlayer/music/YouAreNotTheKind.mp3"
+          },
+          {
+            title: "Blues In Hoss Flat",
+            artist: "YamanoBigriBand",
+            mp3: "jPlayer/music/BluesInHossFlat.mp3"
+          },
+          {
+            title: "How my heart sings",
+            artist: "Jun Satou Quintet",
+            mp3: "jPlayer/music/HowMyHeartSings.mp3"
+          },
+          {
+            title: "Fair and wamer",
+            artist: "NWJO(Senior)",
+            mp3: "jPlayer/music/FairAndWamer.mp3"
+          },
+          {
+            title: "Splanky",
+            artist: "NWJO(Reg)",
+            mp3: "jPlayer/music/Splanky.mp3"
+          },
+          {
+            title: "Heats On",
+            artist: "NWJO(Jr)",
+            mp3: "jPlayer/music/HeatsOn.mp3"
+          }
+          
+      ], {
+        playlistOptions: {
+          autoPlay: true,
+          enableRemoveControls: false
+        },
+        swfPath: "jPlayer/js",
+        supplied: " mp3",
+        wmode: "window"
+      });
+    });
+
+    //]]>
+
+    //****************************************************************************
+    //***    Masonary
+    //***     
+    //*****************************************************************************
+	  $(function () {
+	    $('#photoBox').masonry({	//ここには敷き詰めたい要素を囲うidなど指定します。
+	      itemSelector: '.photoMasonry',	//ここに敷き詰めたい要素のclassを指定します。
+	      isAnimated: true
+	    });
+	  });
+
+
+
+    //****************************************************************************
+    //***    デバッグ用
+    //***     
+    //*****************************************************************************
+    $(function () {
+      $(window).scroll(function () {
+        var value = $(this).scrollTop();    //スクロール値を取得
+        $('#pixels').text(value);
+      });
+    });
+    
+    
+
+
+    //*****************************************************************************
+    //***    
+    //***   イントロアニメーション
+    //***     
+    //*****************************************************************************
+    
+    $(window).load(function () {
+      $().introtzikas({
+        line: 'white',
+        speedwidth: 5500,
+        speedheight: 5000,
+        bg: 'black',
+        lineheight: 2
+      });
+    });
+</script>
+
+
+
+
+</head>
+
+<body style="visibility:hidden; background-color:white; background-image:none">
+  
+  
+  <!-- ナビ -->
+  <ul id="nav">
+    <li><a href="#area1" title="TOP">Top</a></li>
+    <li><a href="#area2-5" title="Welcome">Welcome</a></li>
+    <li><a href="#area4" title="Food">Food</a></li>
+    <li><a href="#area6-2" title="Music">Music</a></li>
+    <li><a href="#area7" title="Photo">Photo</a></li>
+    <li><a href="#area8" title="Link">Link</a></li>
+    <!-- デバッグ用 -->
+    <!--<li><span id="pixels" style="position: fixed">0</span></li>-->
+    <!-- デバッグ用 -->
+  </ul>
+
+
+  <!-- comment -->
+  <p class="coment1">Jazz喫茶「Savoy」へようこそ。</p>
+  <p class="coment2">
+    当店は明治大学 生田校舎にて活動している<br />
+    <strong>「New Wave Jazz Orchestra」</strong><br />
+    によって学園祭期間中にのみ営業しています。
+  </p>
+  <p class="coment3">
+    当バンドによる演奏は勿論のこと、<br />
+    他大学の学生バンド様やプロとして活動している方々の演奏を聴きながら<br />
+    お食事やお飲み物を召し上がれる場所を提供しております。
+  </p>
+  <p class="coment4">
+    当店は先にオーダーを取らせて頂きます。<br>
+    まずは受付にて係の者がご注文を伺います。
+  </p>
+  <p class="coment5">
+    いらっしゃいませ。ご注文をお伺いします。<br />
+    メニューでございます。
+  </p>
+  <p class="coment6">
+  毎年取り扱っているものが異なります。<br />是非とも実際にご来店してください。
+  </p>
+  <p class="coment7">
+  では係のものがご案内いたします。<br />
+  いらっしゃいませ。
+  </p>
+
+  <p class="coment8">
+  コチラから<br />当店で行われた<br />過去の演奏を<br />聞くことが出来ます。
+  </p>
+
+  <p class="coment9">
+    またのご来店を<br />お待ちしております。
+
+  </p>
+  <!-- comment -->
+
+
+  <!--  MAN -->
+    <img id="man1" src="img/manager1.png" alt="" />
+    <img id="man2" src="img/maneger2.png" alt="" />
+  <!--  MAN -->
+
+  <!-- Inst -->
+  <div id="instArea">
+    <img  id="inst1" src="img/inst1.png" alt="" />
+    <img  id="inst2" src="img/inst2.png" alt="" /><br />
+    <img  id="inst3" src="img/inst3.png" alt="" /><br />  
+    <img  id="stage1" src="img/stage1.png" alt="" /><br />  
+  </div>
+	<!-- Inst -->
+
+
+  <!-- Other -->
+    <img class="depth" src="img/depth.jpg" style="right:0;top:0;" alt="右上" />
+    <img class="depth" src="img/depth.jpg" style="right:0;bottom:0;" alt="右下" />
+    <img class="depth" src="img/depth.jpg" style="left:0;top:0;" alt="左上" />
+    <img class="depth" src="img/depth.jpg" style="left:0;bottom:0;" alt="左下" />
+    <a href="#area6-1"><img class="item1" src="img/item1.gif"  alt="" /></a>
+  <!-- Other -->
+
+
+  <!-- Savoy文字 -->
+  <div  id="savoyCharactorBox">
+    <img class="savoyCharactar" id="sc1" src="img/savoy1.png" alt="S"/>
+  	<img class="savoyCharactar" id="sc2" src="img/savoy2.png" alt="a"/>
+  	<img class="savoyCharactar" id="sc3" src="img/savoy3.png" alt="v"/>
+  	<img class="savoyCharactar" id="sc4" src="img/savoy4.png" alt="o"/>
+  	<img class="savoyCharactar" id="sc5" src="img/savoy5.png" alt="y"/>
+  	<img class="savoyCharactar" id="sc6" src="img/presented.png" alt="presentedd by NWJO"/>
+  </div>
+  <!-- Savoy文字 -->
+   
+
+
+  <!-- Area1 -->
+  <div id="area1">
+  	<div id="area1-0"></div>
+  	<div id="area1-1"></div>
+  	<div id="area1-2"></div>
+    <div class="story">
+    </div>
+    <!--.story-->
+  </div>
+  <!--#area1-->
+
+
+  <!-- Area2 -->
+  <div id="area2">
+    <div id="area2-1"></div>
+    <div id="area2-2"></div>
+    <div id="area2-3"></div>
+    <div id="area2-4"></div>
+    <div id="area2-5"></div>
+    <div id="area2-6"></div>
+    <div class="story">
+    </div>
+    <!--.story-->
+  </div>
+  <!--#area2-->
+
+
+
+
+
+  <!-- Area3 -->
+  <div id="area3">
+    <div class="story">
+    </div>
+    <!--.story-->
+  </div>
+  <!--#area3-->
+
+
+
+
+  <!-- Area4 -->
+  <div id="area4">
+    <div class="story">
+      <div class="fourthBox">
+        <img class="openMenu" src="img/area4item1.png" alt="" />
+        <div  class="food1"><img src="img/area4food1.gif" alt="" /><img src="img/area4name1.png" style="height:84px;width:165px;"alt="" /></div>
+        <div  class="food2"><img src="img/area4food2.gif" alt="" /><img src="img/area4name2.png" style="height:84px;width:165px;"alt="" /></div>
+        <div  class="food3"><img src="img/area4food3.gif" alt="" /><img src="img/area4name3.png" style="height:84px;width:165px;"alt="" /></div>
+        <div  class="food4"><img src="img/area4food4.gif" alt="" /><img src="img/area4name4.png" style="height:84px;width:165px;"alt="" /></div>
+
+      </div>
+    </div>
+    <!--.story-->
+  </div>
+  <!--#area4-->
+
+
+  <!-- Area5 -->
+  <div id="area5">
+    <div id="area5-1"></div>
+    <div id="area5-2"></div>
+    <div class="story">
+    </div>
+    <!--.story-->
+  </div>
+  <!--#area5-->
+
+
+  <!-- Area6 -->
+  <div id="area6">
+    <div id="area6-1"></div>
+    <div id="area6-2"></div>
+    <div class="story">
+      <div id="player">
+        <!-- CODE -->
+        <div id="jquery_jplayer_2" class="jp-jplayer"></div>
+        <div id="jp_container_2" class="jp-audio">
+          <div class="jp-type-playlist">
+            <div class="jp-gui jp-interface">
+              <ul class="jp-controls">
+                <li><a href="javascript:;" class="jp-previous" tabindex="1">previous</a></li>
+                <li><a href="javascript:;" class="jp-play" tabindex="1">play</a></li>
+                <li><a href="javascript:;" class="jp-pause" tabindex="1">pause</a></li>
+                <li><a href="javascript:;" class="jp-next" tabindex="1">next</a></li>
+                <li><a href="javascript:;" class="jp-stop" tabindex="1">stop</a></li>
+                <li><a href="javascript:;" class="jp-mute" tabindex="1" title="mute">mute</a></li>
+                <li><a href="javascript:;" class="jp-unmute" tabindex="1" title="unmute">unmute</a></li>
+                <li><a href="javascript:;" class="jp-volume-max" tabindex="1" title="max volume">max volume</a></li>
+              </ul>
+              <div class="jp-progress">
+                <div class="jp-seek-bar">
+                  <div class="jp-play-bar"></div>
+
+                </div>
+              </div>
+              <div class="jp-volume-bar">
+                <div class="jp-volume-bar-value"></div>
+              </div>
+              <div class="jp-current-time"></div>
+              <div class="jp-duration"></div>
+              <ul class="jp-toggles">
+                <li><a href="javascript:;" class="jp-shuffle" tabindex="1" title="shuffle">shuffle</a></li>
+                <li><a href="javascript:;" class="jp-shuffle-off" tabindex="1" title="shuffle off">shuffle off</a></li>
+                <li><a href="javascript:;" class="jp-repeat" tabindex="1" title="repeat">repeat</a></li>
+                <li><a href="javascript:;" class="jp-repeat-off" tabindex="1" title="repeat off">repeat off</a></li>
+              </ul>
+            </div>
+            <div class="jp-playlist">
+              <ul>
+                <li></li>
+              </ul>
+            </div>
+            <div class="jp-no-solution">
+            </div>
+          </div>
+        </div>
+        <!-- CODE -->
+      </div>
+      <!--player-->
+    </div>
+    <!--.story-->
+  <div id="area6-3"></div>
+  <div id="area6-4"></div>
+    <div id="area6-5"></div>
+    <div id="area6-6"></div>
+    <div id="area6-7"></div>
+    <div id="area6last"></div>
+  </div>
+  <!--#area6-->
+
+  <!-- area7 -->
+  <div id="area7">
+  	<div id="area7-1"></div>
+  	<div id="photoBox">
+  		<img class="photoMasonry" style="width:200px;height:150px;"  src="photo/01.jpg"alt="" />
+		<img class="photoMasonry" style="width:150px;height:200px;"  src="photo/02.jpg"alt="" />
+		<img class="photoMasonry" style="width:200px;height:150px;"  src="photo/03.jpg"alt="" />
+		<img class="photoMasonry" style="width:200px;height:150px;"  src="photo/04.jpg"alt="" /> 
+		<img class="photoMasonry" style="width:200px;height:150px;"  src="photo/05.jpg"alt="" />
+		<img class="photoMasonry" style="width:200px;height:150px;"  src="photo/06.jpg"alt="" />
+		<img class="photoMasonry" style="width:200px;height:150px;"  src="photo/07.jpg"alt="" />
+		<img class="photoMasonry" style="width:200px;height:150px;"  src="photo/08.jpg"alt="" />
+		<img class="photoMasonry" style="width:200px;height:150px;"  src="photo/09.jpg"alt="" /> 
+
+		<img class="photoMasonry" style="width:300px;height:200px;"  src="photo/10.jpg"alt="" />
+		<img class="photoMasonry" style="width:158px;height:240px;"  src="photo/11.jpg"alt="" />
+		<img class="photoMasonry" style="width:300px;height:225px;"  src="photo/12.jpg"alt="" />
+		<img class="photoMasonry" style="width:240px;height:320px;"  src="photo/13.jpg"alt="" />
+		<img class="photoMasonry" style="width:150px;height:250px;"  src="photo/14.jpg"alt="" />
+
+		<img class="photoMasonry" style="width:100px;height:180px;"  src="photo/16.jpg"alt="" />
+		<img class="photoMasonry" style="width:193px;height:299px;"  src="photo/17.jpg"alt="" />
+		<img class="photoMasonry" style="width:200px;height:150px;"  src="photo/18.jpg"alt="" />
+		<img class="photoMasonry" style="width:300px;height:225px;"  src="photo/19.jpg"alt="" />
+		<img class="photoMasonry" style="width:300px;height:225px;"  src="photo/20.jpg"alt="" />
+	</div>  	
+  	<div id="area7-2"></div>	
+	<div id="area7end"></div>	
+  		
+    <!--.story-->
+  </div>
+  <!--#area7-->
+  
+  
+  
+    <!-- area8 -->
+  <div id="area8">
+    <div class="story">
+      <a id="link1" href="http://newwave.s55.xrea.com/" target="_blank"><img src="img/banner1.jpg"alt="" /><br />公式サイト</a>
+      <a id="link2" href="https://twitter.com/NewWaveJazzOrch" target="_blank"><img src="img/banner2.jpg"alt="" /><br />Twitter</a>
+    </div>
+    <!--.story-->
+  </div>
+  <!--#area8-->
+
+
+</body>
+</html>

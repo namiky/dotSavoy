@@ -1,0 +1,480 @@
+﻿
+@charset "utf-8";
+/* CSS Document */
+body {
+
+}
+#area1,#area2,#area3,#area4,#area5,#area6,#area7,#area8 {
+	margin: 0 auto;
+  	width: 100%;
+   
+}
+ img   { border:none;}
+body ,p,ul{
+  padding: 0;
+  margin: 0 auto;
+}
+body {
+  min-width: 980px;
+}
+p {
+  min-width: 50px;
+  overflow: hidden;
+}
+
+
+/******ナビゲーション***/
+/*
+#nav{
+	padding:10px;
+	background-color:gray;
+  top:30%;
+	list-style: none;
+	position: fixed;
+	right: 50px;
+  z-index: 9999;
+}
+#nav li{
+	margin: 0 0 15px 0;	
+}
+#nav li a {
+	display: block;
+	width: 10px;
+	height: 10px;
+	border-radius: 10px;
+	background-color: white;
+	border: solid 2px white;
+}
+
+#nav li a.current {
+	background-color: orange;
+}*/
+ 
+#nav{
+  position:fixed;
+  font: 11px / 12px "Melburne", arial;
+  color: #fff;
+  text-transform:uppercase;
+  text-align:center;
+  z-index:500;
+  height:208px;
+  top:50%;
+  right:20px;
+  margin-top:-144px;
+}
+#nav > li {
+  background: url('img/nav.png') no-repeat top left;
+  width:56px;
+  height:37px;
+  padding:19px 0 0 1px;
+  margin-top:5px;
+  display:block;
+  cursor:pointer;
+}
+#nav > li > a:link { color:white; text-decoration:none }
+#nav > li > a:visited { color:white; text-decoration:none }
+#nav > li > a:hover { color:green; text-decoration:none }
+
+
+
+/*******アイテム *****/
+#man1{
+	background: 50% no-repeat center;
+	position: fixed;
+	left: 50px;
+  bottom:-500px;
+  z-index:999;
+  height:325px;
+  width:160px;
+}
+
+#man2{
+	background: 50% no-repeat center;
+	position: fixed;
+	right: -500px;
+  bottom:0px;
+  z-index:999;
+  height:300px;
+  width:120px;
+}
+
+/*上下左右から黒いボックスが迫ってくる*/
+.depth {
+  position:fixed;
+  z-index:1000;
+    /*透過*/
+  opacity:1;
+  filter: alpha(opacity=1);        /* ie lt 8 */
+  -ms-filter: "alpha(opacity=1)";  /* ie 8 */
+  -moz-opacity:1;                 /* FF lt 1.5, Netscape */
+  -khtml-opacity: 1;              /* Safari 1.x */  
+  zoom:1;
+  /*透過*/
+}
+
+.item1 {
+  left:-50%;
+  top:50%;
+  position:fixed;
+  z-index:1001;
+    /*透過*/
+  opacity:0;
+  filter: alpha(opacity=0);        /* ie lt 8 */
+  -ms-filter: "alpha(opacity=0)";  /* ie 8 */
+  -moz-opacity:0;                 /* FF lt 1.5, Netscape */
+  -khtml-opacity: 0;              /* Safari 1.x */  
+  zoom:1;
+  /*透過*/
+}
+
+/******* アイテム *****/
+
+
+
+/******* コメント *****/
+.coment1 ,.coment2 , .coment3 , .coment4 , .coment5 , .coment6 , .coment7 , .coment8 , .coment9{
+  font-size:150%;
+  position:fixed;
+  /*透過*/
+  opacity:0;
+  filter: alpha(opacity=0);        /* ie lt 8 */
+  -ms-filter: "alpha(opacity=0)";  /* ie 8 */
+  -moz-opacity:0;                 /* FF lt 1.5, Netscape */
+  -khtml-opacity: 0;              /* Safari 1.x */  
+  zoom:1;
+  /*透過*/
+}
+
+.coment1 {
+  top:30px;
+  left:100px;
+}
+.coment2 {
+  top:60px;
+  left:500px;
+}
+.coment3 {
+  top:240px;
+  left:200px;
+}
+.coment4 {
+  top:400px;
+  left:400px;
+}
+.coment5 {
+  bottom:70px;
+  left:30%;
+}
+.coment6 {
+  bottom:0px;
+  left:30%;
+}
+.coment7 {
+  bottom:70px;
+  left:30%;
+}
+.coment8 {
+color:gray;
+  bottom:400px;
+  left:20px;
+  font-size:140%;
+}
+.coment9 {
+  bottom:400px;
+  left:20px;
+}
+/******* コメント *****/
+
+
+
+
+/******* Savoy文字 *****/
+.savoyCharactar{
+	position:absolute;
+	/*透過*/
+  opacity:1;
+  filter: alpha(opacity=1);        /* ie lt 8 */
+  -ms-filter: "alpha(opacity=1)";  /* ie 8 */
+  -moz-opacity:1;                 /* FF lt 1.5, Netscape */
+  -khtml-opacity: 1;              /* Safari 1.x */  
+  zoom:1;
+  /*透過*/
+}
+#savoyCharactorBox{
+	position:fixed;
+	left:50%;
+	top:50%;
+	margin-left:-410px;
+	margin-top:-80px;
+}
+#sc1{
+	left:0px;
+	top:0px;
+	height:168px;
+	width:124px;
+	}
+#sc2{
+	left:124px;
+	top:0px;
+	width:170px;
+	height:164px;
+}
+#sc3{
+	left:294px;
+	top:0px;
+	width:170px;
+	height:164px;
+}
+#sc4{
+	left:464px;
+	top:0px;
+	width:160px;
+	height:168px;
+}
+#sc5{
+	left:624px;
+	top:0px;
+	width:169px;
+	height:160px;
+}
+#sc6{
+	top:160px;
+	left:170px;
+	/*透過*/
+	  opacity:0;
+	  filter: alpha(opacity=0);        /* ie lt 8 */
+	  -ms-filter: "alpha(opacity=0)";  /* ie 8 */
+	  -moz-opacity:0;                 /* FF lt 1.5, Netscape */
+	  -khtml-opacity: 0;              /* Safari 1.x */  
+	  zoom:1;
+  /*透過*/
+}
+/******* Savoy文字*****/
+
+
+
+/******* InstAre 楽器演奏者*****/
+#instArea{
+  position:fixed;
+  left:500px;
+  height:600px;
+}
+#instArea img{
+  position:relative;
+}
+/*高さと幅も最終的に決定させる*/
+#stage1{
+  top:-750px;
+  left:0px;
+  /*透過*/
+    opacity:0;
+    filter: alpha(opacity=0);        /* ie lt 8 */
+    -ms-filter: "alpha(opacity=0)";  /* ie 8 */
+    -moz-opacity:0;                 /* FF lt 1.5, Netscape */
+    -khtml-opacity: 0;              /* Safari 1.x */  
+    zoom:1;
+  /*透過*/
+}
+#inst1{/*drum*/
+  top:-500px;
+  left:0%;
+}
+#inst2{/*base*/
+  top:-500px;
+  left:0px;
+}
+#inst3{/*sax*/
+  top:-1000px;
+  left:250px;
+}
+
+/******* InstArea 楽器演奏者*****/
+
+
+
+
+/******* AREA1 *****/
+#area1 {
+  background: AliceBlue 50% -200px no-repeat fixed;
+  z-index:10;
+}
+#area1-0  , #area1-1 , #area1-2{
+	height:500px;
+}
+/******* ;AREA1 *****/
+
+
+
+/******* AREA2 *****/
+#area2 {
+  background-color:rgb(188, 223, 203);
+  z-index:20;
+}
+#area2-1 , #area2-2, #area2-3, #area2-4, #area2-5 , #area2-6 {
+  height:1000px;
+ 
+}
+
+/******* ;AREA2 *****/
+
+
+
+
+/******* AREA3 *****/
+/*実質利用してないので最終的に削除*/
+#area3 {
+  height:0px;
+  background-color:green;
+	background:  50% 0 no-repeat fixed;
+}
+/******* ;AREA3 *****/
+
+
+/******* AREA4 *****/
+#area4 {
+  height:4000px;
+  background-color:#ffd800;
+	background: url(img/area4BG.jpg) 50% 0 repeat fixed;
+  z-index:40;
+}
+.fourthBox {
+  position: fixed;
+  top:50px;
+  left:20%;
+}
+#fourth .openMenu{
+  margin: 0 auto;
+  height: 480px;
+  width: 640px;
+  overflow:hidden;
+}
+.food1 {
+  top:50px;
+  left:60px;
+  position:absolute;
+  height: 217px;
+  width: 250px;
+}
+.food2 {
+  top:50px;
+  right:50px; 
+  position:absolute;
+  height: 188px;
+  width: 250px;
+}
+.food3 {
+  top:50px;
+  left:60px;
+  position:absolute;
+  height: 167px;
+  width: 250px;
+}
+.food4 {
+  top:50px;
+  right:50px;  
+  position:absolute;
+  height: 232px;
+  width: 250px;
+}
+
+/******* ;AREA4 *****/
+
+
+
+/******* AREA5 *****/
+#area5 {
+	background:50% 0 no-repeat fixed;
+    background-color:rgb(255,244,212);
+  z-index:50;
+}
+#area5-1{
+  height: 500px;
+}
+#area5-2{
+	height:2000px;
+}
+/******* ;AREA5 *****/
+
+
+
+
+/******* AREA6 *****/
+#area6 {
+	background: url(img/area6BG.jpg) 50% 0 repeat;
+  z-index:60;
+}
+#area6-1 , #area6-2 , #area6-3 , #area6-4 , #area6-5 , #area6-6 , #area6-7 , #area6last{
+  height: 500px;
+}
+  #player {
+    top:-1000px;
+    left:300px;
+    overflow:hidden;
+    position:relative;
+    margin: 0 auto;
+    width:243px;
+    z-index:5;
+    position:fixed;
+  }
+/******* ;AREA6 *****/
+
+
+/******* area7 *****/
+#area7{
+	color:white;
+background: black 50% 0 repeat fixed;
+  z-index:65;
+}
+#area7-1 , #area7-2 , #area7-3 , #area7-4 , #area7-5 , #area7-6 , #area7-7{
+	height:500px;
+	background: black;
+}
+#area7end{
+	height:1000px;
+	background:url(img/area7end.jpg);
+}
+#photoBox{
+	background:black;
+	margin-left:243px;/*音楽ブレイヤー分の大きさ*/
+}
+.photoMasonry{
+	padding:10px;
+}
+
+
+
+
+/******* area7 *****/
+
+
+/******* area8 *****/
+#area8 {
+  height:2000px;
+	background: silver 50% 0 repeat fixed;
+  z-index:70;
+}
+#link1, #link2 {
+  top:-500px;
+  position:fixed;
+}
+#link1 {
+  left: 200px;
+}
+#link2 {
+  left: 400px;
+}
+
+/******* ;area8 *****/
+
+
+
+
+
+
+
+
+
+
+  
+
+
