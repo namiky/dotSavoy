@@ -145,10 +145,8 @@
       /***** AREA4内での処理 *******/
       $("#area4").waypoint(function (event, direction) {
         if (direction === 'down') {
-          $(".coment5").animate({ opacity: "0" }, 1000);
           $(".coment6").animate({ opacity: "1" }, 1000);
         } else {
-          $(".coment5").animate({ opacity: "1" }, 1000);
           $(".coment6").animate({ opacity: "0" }, 1000);
         }
       });
@@ -158,12 +156,14 @@
       /***** AREA5内での処理 *******/
       $("#area5-1").waypoint(function (event, direction) {
         if (direction === 'down') {
-          $(".coment7").animate({ opacity: "1" }, 1000);
+          $(".coment5").animate({ opacity: "0" }, 1000);
           $(".coment6").animate({ opacity: "0" }, 1000);
+          $(".coment7").animate({ opacity: "1" }, 1000);
 
         } else {
-          $(".coment7").animate({ opacity: "0" }, 1000);
+          $(".coment5").animate({ opacity: "1" }, 1000);
           $(".coment6").animate({ opacity: "1" }, 1000);
+          $(".coment7").animate({ opacity: "0" }, 1000);
 
         }
       });
@@ -203,10 +203,12 @@
           $("#man1").animate({ opacity: "1" }, 1000);
           $(".coment8").animate({ opacity: "1" }, 1000);
           $("#player").animate({ top: "50" }, 1000, "easeOutBounce");
+          $(".musicNav").animate({ top: "-100" }, 1000, "easeOutBounce");
         } else {
           $("#man1").animate({ opacity: "0" }, 1000);
           $(".coment8").animate({ opacity: "0" }, 1000);
           $("#player").animate({ top: "-1000" }, 1000, "easeOutBounce");
+          $(".musicNav").animate({ top: "0" }, 1000, "easeOutBounce");
         }
       });
       $("#area6-4").waypoint(function (event, direction) {
@@ -384,34 +386,34 @@
             mp3: "jPlayer/music/Seresta.mp3"
           },
           {
-            title: "Swing Shiift",
-            artist: "YamanoBigriBand",
+            title: "Swing Shift",
+            artist: "YAMANO BIGli Band",
             mp3: "jPlayer/music/SwingShift.mp3"
           },
           {
-            title: "You are Not the Kind",
-            artist: "YamanoBigriBand",
-            mp3: "jPlayer/music/YouAreNotTheKind.mp3"
-          },
-          {
-            title: "Blues In Hoss Flat",
-            artist: "YamanoBigriBand",
-            mp3: "jPlayer/music/BluesInHossFlat.mp3"
-          },
-          {
-            title: "How my heart sings",
-            artist: "Jun Satou Quintet",
-            mp3: "jPlayer/music/HowMyHeartSings.mp3"
-          },
-          {
-            title: "Fair and wamer",
-            artist: "NWJO(Senior)",
-            mp3: "jPlayer/music/FairAndWamer.mp3"
+            title: "Early Autumn",
+            artist: "NWJO(Reg)",
+            mp3: "jPlayer/music/EarlyAutumn.mp3"
           },
           {
             title: "Splanky",
             artist: "NWJO(Reg)",
             mp3: "jPlayer/music/Splanky.mp3"
+          },
+          {
+            title: "Fly me to the Moon",
+            artist: "UtamonoBand",
+            mp3: "jPlayer/music/FlyMeToTheMoon.mp3"
+          },
+          {
+            title: "Ame",
+            artist: "CreamerProject",
+            mp3: "jPlayer/music/ame.mp3"
+          },
+          {
+            title: "How my Heart Sings",
+            artist: "Jun Satou Quintet",
+            mp3: "jPlayer/music/HowMyHeartSings.mp3"
           },
           {
             title: "Heats On",
@@ -490,7 +492,7 @@
     <li><a href="#area2-5" title="Welcome">Welcome</a></li>
     <li><a href="#area4" title="Food">Food</a></li>
     <li><a href="#area6-2" title="Music">Music</a></li>
-    <li><a href="#area7" title="Photo">Photo</a></li>
+    <li><a href="#photoBox" title="Photo">Photo</a></li>
     <li><a href="#area8" title="Link">Link</a></li>
     <!-- デバッグ用 -->
     <!--<li><span id="pixels" style="position: fixed">0</span></li>-->
@@ -552,13 +554,13 @@
 	<!-- Inst -->
 
 
-  <!-- Other -->
+  <!-- Depth -->
     <img class="depth" src="img/depth.jpg" style="right:0;top:0;" alt="右上" />
     <img class="depth" src="img/depth.jpg" style="right:0;bottom:0;" alt="右下" />
     <img class="depth" src="img/depth.jpg" style="left:0;top:0;" alt="左上" />
     <img class="depth" src="img/depth.jpg" style="left:0;bottom:0;" alt="左下" />
     <a href="#area6-1"><img class="item1" src="img/item1.gif"  alt="" /></a>
-  <!-- Other -->
+  <!-- Depth -->
 
 
   <!-- Savoy文字 -->
@@ -663,6 +665,10 @@
                 <li><a href="javascript:;" class="jp-mute" tabindex="1" title="mute">mute</a></li>
                 <li><a href="javascript:;" class="jp-unmute" tabindex="1" title="unmute">unmute</a></li>
                 <li><a href="javascript:;" class="jp-volume-max" tabindex="1" title="max volume">max volume</a></li>
+                <!-- 右上に表示用-->
+                <li><img class="musicNav" src="img/musicNav.png" style="position:fixed;top:0px;right:0px;"></li>
+                <li><a href="javascript:;" class="jp-play musicNav" tabindex="1" style="position:fixed;top:0px;right:0px;">play</a></li>
+                <li><a href="javascript:;" class="jp-pause musicNav" tabindex="1" style="position:fixed;top:0px;right:0px;">pause</a></li>
               </ul>
               <div class="jp-progress">
                 <div class="jp-seek-bar">
@@ -710,27 +716,27 @@
   	<div id="area7-1"></div>
   	<div id="photoBox">
   		<img class="photoMasonry" style="width:200px;height:150px;"  src="photo/01.jpg"alt="" />
-		<img class="photoMasonry" style="width:150px;height:200px;"  src="photo/02.jpg"alt="" />
-		<img class="photoMasonry" style="width:200px;height:150px;"  src="photo/03.jpg"alt="" />
-		<img class="photoMasonry" style="width:200px;height:150px;"  src="photo/04.jpg"alt="" /> 
-		<img class="photoMasonry" style="width:200px;height:150px;"  src="photo/05.jpg"alt="" />
-		<img class="photoMasonry" style="width:200px;height:150px;"  src="photo/06.jpg"alt="" />
-		<img class="photoMasonry" style="width:200px;height:150px;"  src="photo/07.jpg"alt="" />
-		<img class="photoMasonry" style="width:200px;height:150px;"  src="photo/08.jpg"alt="" />
-		<img class="photoMasonry" style="width:200px;height:150px;"  src="photo/09.jpg"alt="" /> 
-
-		<img class="photoMasonry" style="width:300px;height:200px;"  src="photo/10.jpg"alt="" />
-		<img class="photoMasonry" style="width:158px;height:240px;"  src="photo/11.jpg"alt="" />
-		<img class="photoMasonry" style="width:300px;height:225px;"  src="photo/12.jpg"alt="" />
-		<img class="photoMasonry" style="width:240px;height:320px;"  src="photo/13.jpg"alt="" />
-		<img class="photoMasonry" style="width:150px;height:250px;"  src="photo/14.jpg"alt="" />
-
-		<img class="photoMasonry" style="width:100px;height:180px;"  src="photo/16.jpg"alt="" />
-		<img class="photoMasonry" style="width:193px;height:299px;"  src="photo/17.jpg"alt="" />
-		<img class="photoMasonry" style="width:200px;height:150px;"  src="photo/18.jpg"alt="" />
-		<img class="photoMasonry" style="width:300px;height:225px;"  src="photo/19.jpg"alt="" />
-		<img class="photoMasonry" style="width:300px;height:225px;"  src="photo/20.jpg"alt="" />
-	</div>  	
+  		<img class="photoMasonry" style="width:150px;height:200px;"  src="photo/02.jpg"alt="" />
+  		<img class="photoMasonry" style="width:200px;height:150px;"  src="photo/03.jpg"alt="" />
+  		<img class="photoMasonry" style="width:200px;height:150px;"  src="photo/04.jpg"alt="" /> 
+  		<img class="photoMasonry" style="width:200px;height:150px;"  src="photo/05.jpg"alt="" />
+  		<img class="photoMasonry" style="width:200px;height:150px;"  src="photo/06.jpg"alt="" />
+  		<img class="photoMasonry" style="width:200px;height:150px;"  src="photo/07.jpg"alt="" />
+  		<img class="photoMasonry" style="width:200px;height:150px;"  src="photo/08.jpg"alt="" />
+  		<img class="photoMasonry" style="width:200px;height:150px;"  src="photo/09.jpg"alt="" /> 
+  
+  		<img class="photoMasonry" style="width:300px;height:200px;"  src="photo/10.jpg"alt="" />
+  		<img class="photoMasonry" style="width:158px;height:240px;"  src="photo/11.jpg"alt="" />
+  		<img class="photoMasonry" style="width:300px;height:225px;"  src="photo/12.jpg"alt="" />
+  		<img class="photoMasonry" style="width:240px;height:320px;"  src="photo/13.jpg"alt="" />
+  		<img class="photoMasonry" style="width:150px;height:250px;"  src="photo/14.jpg"alt="" />
+  
+  		<img class="photoMasonry" style="width:100px;height:180px;"  src="photo/16.jpg"alt="" />
+  		<img class="photoMasonry" style="width:193px;height:299px;"  src="photo/17.jpg"alt="" />
+  		<img class="photoMasonry" style="width:200px;height:150px;"  src="photo/18.jpg"alt="" />
+  		<img class="photoMasonry" style="width:300px;height:225px;"  src="photo/19.jpg"alt="" />
+  		<img class="photoMasonry" style="width:300px;height:225px;"  src="photo/20.jpg"alt="" />
+	 </div>  	  
   	<div id="area7-2"></div>	
 	<div id="area7end"></div>	
   		

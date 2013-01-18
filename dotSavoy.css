@@ -74,7 +74,9 @@ p {
 #nav > li > a:link { color:white; text-decoration:none }
 #nav > li > a:visited { color:white; text-decoration:none }
 #nav > li > a:hover { color:green; text-decoration:none }
-
+.musicNav{
+  
+}
 
 
 /*******アイテム *****/
@@ -102,6 +104,8 @@ p {
 .depth {
   position:fixed;
   z-index:1000;
+  height:0px;
+  width:0px;
     /*透過*/
   opacity:1;
   filter: alpha(opacity=1);        /* ie lt 8 */
@@ -180,8 +184,8 @@ color:gray;
   font-size:140%;
 }
 .coment9 {
-  bottom:400px;
-  left:20px;
+  bottom:50px;
+  left:230px;
 }
 /******* コメント *****/
 
